@@ -28,21 +28,21 @@ const Contact = () => {
     {
       icon: Github,
       name: 'GitHub',
-      url: 'https://github.com/kiah',
+      url: 'https://github.com/kiahcodes',
       color: 'text-gray-400 hover:text-white',
       bgColor: 'hover:bg-gray-800',
     },
     {
       icon: Linkedin,
       name: 'LinkedIn',
-      url: 'https://linkedin.com/in/kiah',
+      url: 'https://www.linkedin.com/in/kiah-mandaliya/',
       color: 'text-blue-400 hover:text-blue-300',
       bgColor: 'hover:bg-blue-500/20',
     },
     {
       icon: Mail,
       name: 'Email',
-      url: 'mailto:kiah@example.com',
+      url: 'mailto:kiahdmandaliya@gmail.com',
       color: 'text-cyan-400 hover:text-cyan-300',
       bgColor: 'hover:bg-cyan-500/20',
     },
@@ -81,7 +81,7 @@ const Contact = () => {
                   placeholder="Enter your name"
                 />
               </div>
-              <div>
+              {/* <div>
                 <label className="block text-sm font-medium text-gray-300 mb-2">
                   Email Address
                 </label>
@@ -90,7 +90,7 @@ const Contact = () => {
                   className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/20 transition-colors text-white"
                   placeholder="Enter your email"
                 />
-              </div>
+              </div> */}
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-2">
                   Message
@@ -122,7 +122,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-gray-300">Email</p>
-                    <p className="text-white font-semibold">kiah@example.com</p>
+                    <p className="text-white font-semibold">kiahdmandaliya@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -131,7 +131,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-gray-300">Phone</p>
-                    <p className="text-white font-semibold">+1 (555) 123-4567</p>
+                    <p className="text-white font-semibold">+91 8140800042</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -140,7 +140,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-gray-300">Location</p>
-                    <p className="text-white font-semibold">Available for Remote Work</p>
+                    <p className="text-white font-semibold">Ahmedabad, India</p>
                   </div>
                 </div>
               </div>
