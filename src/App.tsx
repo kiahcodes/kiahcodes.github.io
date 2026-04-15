@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import { BrowserRouter as Router, useLocation } from "react-router-dom";
 
 import Hero from "./components/Hero";
-import Timeline from "./components/Timeline";
 import Projects from "./components/Projects";
+import Hackathons from "./components/Hackathons";
 import Skills from "./components/Skills";
 import CurrentExploration from "./components/CurrentExploration";
 import Internship from "./components/Internship";
@@ -34,8 +34,8 @@ function App() {
 
       <div className="min-h-screen bg-gray-900 text-white overflow-x-hidden">
         <section id="home"><Hero /></section>
-        <section id="timeline"><Timeline /></section>
         <section id="projects"><Projects /></section>
+        <section id="hackathons"><Hackathons /></section>
         <section id="skills"><Skills /></section>
         <section id="exploration"><CurrentExploration /></section>
         <section id="internship"><Internship /></section>
