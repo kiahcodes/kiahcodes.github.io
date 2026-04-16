@@ -1,9 +1,8 @@
-import React, { useEffect, useState,  } from 'react';
+import React, { useEffect, useState, } from 'react';
 import { ChevronDown, Code, Cpu, Zap } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
-  const [particles, setParticles] = useState<number[]>([]);
   const [currentText, setCurrentText] = useState('');
   const fullText = "Transforming ideas into intelligent solutions";
   const navigate = useNavigate();
@@ -13,11 +12,6 @@ const Hero = () => {
   };
 
   useEffect(() => {
-    // Create particles
-    const particleArray = Array.from({ length: 30 }, (_, i) => i);
-    setParticles(particleArray);
-
-    
     // Typing animation
     let index = 0;
     const typeText = () => {
@@ -32,29 +26,6 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900/20 to-purple-900/20">
-        {/* Floating Particles */}
-        {particles.map((particle, index) => (
-          <div
-            key={particle}
-            className="particle"
-            style={{
-              left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 8}s`,
-              animationDuration: `${8 + Math.random() * 4}s`,
-            }}
-          />
-        ))}
-        
-        {/* Circuit Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 border border-cyan-400 rounded-full float-animation" />
-          <div className="absolute top-1/3 right-1/4 w-48 h-48 border border-purple-400 rounded-full float-animation" style={{ animationDelay: '2s' }} />
-          <div className="absolute bottom-1/4 left-1/3 w-32 h-32 border border-green-400 rounded-full float-animation" style={{ animationDelay: '4s' }} />
-        </div>
-      </div>
-
       {/* Main Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <div className="mb-8">
@@ -87,11 +58,11 @@ const Hero = () => {
         <div className="flex justify-center gap-4">
           <button className="glow-button bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105"
             onClick={() => {
-                      const link = document.createElement("a");
-                      link.href = "/Kiah_Resume.pdf";
-                      link.download = "Kiah_Resume.pdf";
-                      link.click();
-                    }}
+              const link = document.createElement("a");
+              link.href = "/Kiah_Resume.pdf";
+              link.download = "Kiah_Resume.pdf";
+              link.click();
+            }}
           >
             Download Resume
           </button>
