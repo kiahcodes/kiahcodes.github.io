@@ -9,6 +9,7 @@ import CurrentExploration from "./components/CurrentExploration";
 import Internship from "./components/Internship";
 import Contact from "./components/Contact";
 import LiquidEther from "./components/LiquidEther";
+import SideStaggerNav from "./components/SideStaggerNav";
 
 import "./App.css";
 
@@ -34,6 +35,7 @@ function App() {
   return (
     <Router>
       <ScrollToSection />
+      <SideStaggerNav />
 
       <div className="min-h-screen bg-gray-900 text-white overflow-x-hidden relative">
         <div className="fixed inset-0 z-0 pointer-events-none">
