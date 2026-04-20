@@ -38,7 +38,7 @@ const Projects = () => {
         'Solves the complex Vehicle Routing Problem utilizing OR-Tools'
       ],
       color: 'cyan',
-      github: '#',
+      github: 'https://github.com/kiahcodes/VehicleRoutingReactFastAPI.git',
       live: '#',
     },
     {
