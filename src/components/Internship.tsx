@@ -12,12 +12,14 @@ const Internship = () => {
   const commands = [
     '$ cd /career/internships',
     '$ ls -la',
-    'ScaleTech-2024/',
-    '$ cd ScaleTech-2024',
+    'ScaleTech-2025/',
+    '$ cd ScaleTech-2025',
     '$ cat experience.txt',
     'Software Development Intern',
     'Technologies: React, FastAPI, PostgreSQL',
     'Duration: 1 month',
+    'Achievements: Built a logistics route optimization system solving real-world delivery inefficiencies',
+
     '$ git log --oneline',
     'a1b2c3d Feature: User authentication system',
     'e4f5g6h Fix: Database optimization',
@@ -216,7 +218,7 @@ const Internship = () => {
           >
             {/* Modal header */}
             <div className="flex items-center justify-between px-5 py-3 border-b border-gray-700">
-              <span className="text-white font-semibold text-sm">📦 Logistics Route Optimizer — Demo</span>
+              <span className="text-white font-semibold text-sm">Truck Route Planner</span>
               <button
                 onClick={closeModal}
                 className="text-gray-400 hover:text-white transition-colors p-1 rounded-lg hover:bg-gray-700"
