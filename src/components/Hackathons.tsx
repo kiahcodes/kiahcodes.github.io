@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Trophy, Medal, Code2, Sparkles } from 'lucide-react';
+import { Trophy, Medal, Code2, Sparkles, Github } from 'lucide-react';
 
 const Hackathons = () => {
     const hackathonsRef = useRef<HTMLElement>(null);
@@ -39,7 +39,8 @@ const Hackathons = () => {
                 'Integrated a responsive conversational chatbot with TTS/STT capabilities'
             ],
             technologies: ['Flutter', 'FastAPI', 'AI', 'TTS/STT'],
-            color: 'cyan'
+            color: 'cyan',
+            github: 'https://github.com/kiahcodes/LabelLens-KnowBeforeYouBuy'
         },
         {
             id: 2,
@@ -54,7 +55,8 @@ const Hackathons = () => {
                 'Built a sophisticated RAG-based intelligent chatbot powered by the Ollama API'
             ],
             technologies: ['Python', 'FastAPI', 'PostgreSQL', 'BeautifulSoup', 'RAG'],
-            color: 'purple'
+            color: 'purple',
+            github: 'https://github.com/kiahcodes/CarrerLens'
         },
         {
             id: 3,
@@ -68,7 +70,8 @@ const Hackathons = () => {
                 'Successfully integrated the bot with Twilio for widespread SMS and WhatsApp access'
             ],
             technologies: ['Python', 'FastAPI', 'RASA', 'Twilio'],
-            color: 'green'
+            color: 'green',
+            github: 'https://github.com/kiahcodes/SIH.git'
         }
     ];
 
@@ -94,10 +97,13 @@ const Hackathons = () => {
                         return (
                             <div
                                 key={item.id}
-                                className="hackathon-card fade-up bg-gray-800/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover-lift group"
+                                className="hackathon-card fade-up bg-gray-800/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover-lift group relative overflow-hidden"
                                 style={{ animationDelay: `${index * 0.15}s` }}
                             >
-                                <div className="flex flex-col md:flex-row gap-6">
+                                {/* Decorative background element */}
+                                <div className={`absolute -right-8 -top-8 w-24 h-24 rounded-full ${item.color === 'cyan' ? 'bg-cyan-500/5' : item.color === 'purple' ? 'bg-purple-500/5' : 'bg-green-500/5'} blur-2xl group-hover:scale-150 transition-transform duration-700`} />
+
+                                <div className="flex flex-col md:flex-row gap-6 relative z-10">
                                     {/* Icon section */}
                                     <div className="flex-shrink-0">
                                         <div className={`w-16 h-16 rounded-xl flex items-center justify-center ${colors.iconBg} shadow-lg`}>
@@ -107,7 +113,7 @@ const Hackathons = () => {
 
                                     {/* Content section */}
                                     <div className="flex-grow space-y-4">
-                                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                                             <div>
                                                 <h3 className="text-2xl font-bold text-white flex items-center gap-3">
                                                     {item.title}
@@ -121,6 +127,19 @@ const Hackathons = () => {
                                                     </span>
                                                 </div>
                                             </div>
+
+                                            {/* Unique GitHub Link placement */}
+                                            {item.github && item.github !== '#' && (
+                                                <a
+                                                    href={item.github}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className={`flex items-center gap-2 px-4 py-2 rounded-xl bg-gray-700/40 border border-gray-600 hover:border-${item.color}-400/50 transition-all duration-300 group/github hover:shadow-[0_0_15px_rgba(34,211,238,0.1)]`}
+                                                >
+                                                    <Github className={`w-5 h-5 ${colors.text} group-hover/github:scale-110 transition-transform`} />
+                                                    <span className="text-sm font-semibold text-gray-300 group-hover/github:text-white">View Code</span>
+                                                </a>
+                                            )}
                                         </div>
 
                                         <p className="text-gray-300 text-lg leading-relaxed">
@@ -164,3 +183,4 @@ const Hackathons = () => {
 };
 
 export default Hackathons;
+

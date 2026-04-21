@@ -29,7 +29,7 @@ const Projects = () => {
       id: 1,
       title: 'Truck Routing Optimization Web App',
       description: 'A full-stack web application designed to solve the Vehicle Routing Problem using machine learning and routing algorithms.',
-      image: 'https://images.pexels.com/photos/2199293/pexels-photo-2199293.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/routing.png',
       icon: Navigation,
       techStack: ['ReactJS', 'Python (FastAPI)', 'PostgreSQL', 'OR-Tools', 'KMeans', 'OSRM'],
       features: [
@@ -181,13 +181,13 @@ const Projects = () => {
                       <Github className="w-5 h-5" />
                       Code
                     </a>
-                    <a
+                    {/* <a
                       href={project.live}
                       className={`glow-button flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${colors.btn} text-white`}
                     >
                       <ExternalLink className="w-5 h-5" />
                       Live Demo
-                    </a>
+                    </a> */}
                   </div>
                 </div>
               </div>
