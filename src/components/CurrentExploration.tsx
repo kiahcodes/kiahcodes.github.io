@@ -27,24 +27,32 @@ const CurrentExploration = () => {
   const explorations = [
     {
       icon: Smartphone,
-      title: 'React Native',
-      description: 'Building cross-platform mobile applications with native performance',
-      status: 'Learning',
+      title: 'Competitive programming',
+      description: 'Solving algorithmic problems to improve problem-solving skills',
+      status: 'Practicing',
       color: 'cyan',
       progress: 60,
     },
     {
       icon: Server,
-      title: 'Backend APIs',
-      description: 'Developing robust REST APIs with Node.js and Express',
+      title: 'Agentic AI',
+      description: 'Developing intelligent agents that can perform tasks autonomously',
       status: 'Practicing',
       color: 'purple',
       progress: 70,
     },
     {
-      icon: Database,
-      title: 'Database Design',
-      description: 'Mastering SQL and NoSQL database optimization',
+      icon: Code,
+      title: 'RAG',
+      description: 'Making AI answers more reliable by combining relevant information with LLMs.',
+      status: 'Practicing',
+      color: 'blue',
+      progress: 75,
+    },
+    {
+      icon: Code,
+      title: 'MCP',
+      description: 'Model Context Protocol enables tools and services to be connected to LLMs',
       status: 'Exploring',
       color: 'green',
       progress: 50,
@@ -53,26 +61,19 @@ const CurrentExploration = () => {
       icon: Cloud,
       title: 'Cloud Computing',
       description: 'Learning AWS services and cloud architecture patterns',
-      status: 'Starting',
+      status: 'Interested',
       color: 'orange',
       progress: 30,
     },
     {
       icon: Zap,
-      title: 'GraphQL',
-      description: 'Modern API query language for efficient data fetching',
+      title: 'LangChain',
+      description: 'LangChain is a framework for developing applications powered by language models',
       status: 'Interested',
       color: 'pink',
       progress: 20,
     },
-    {
-      icon: Code,
-      title: 'TypeScript',
-      description: 'Adding type safety to JavaScript applications',
-      status: 'Practicing',
-      color: 'blue',
-      progress: 75,
-    },
+
   ];
 
   return (
@@ -95,24 +96,22 @@ const CurrentExploration = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex items-center justify-between mb-4">
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-                  item.color === 'cyan' ? 'bg-cyan-500/20 text-cyan-400' :
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${item.color === 'cyan' ? 'bg-cyan-500/20 text-cyan-400' :
                   item.color === 'purple' ? 'bg-purple-500/20 text-purple-400' :
-                  item.color === 'green' ? 'bg-green-500/20 text-green-400' :
-                  item.color === 'orange' ? 'bg-orange-500/20 text-orange-400' :
-                  item.color === 'pink' ? 'bg-pink-500/20 text-pink-400' :
-                  'bg-blue-500/20 text-blue-400'
-                }`}>
+                    item.color === 'green' ? 'bg-green-500/20 text-green-400' :
+                      item.color === 'orange' ? 'bg-orange-500/20 text-orange-400' :
+                        item.color === 'pink' ? 'bg-pink-500/20 text-pink-400' :
+                          'bg-blue-500/20 text-blue-400'
+                  }`}>
                   <item.icon className="w-6 h-6" />
                 </div>
-                <span className={`text-xs font-semibold px-3 py-1 rounded-full ${
-                  item.color === 'cyan' ? 'bg-cyan-500/20 text-cyan-400' :
+                <span className={`text-xs font-semibold px-3 py-1 rounded-full ${item.color === 'cyan' ? 'bg-cyan-500/20 text-cyan-400' :
                   item.color === 'purple' ? 'bg-purple-500/20 text-purple-400' :
-                  item.color === 'green' ? 'bg-green-500/20 text-green-400' :
-                  item.color === 'orange' ? 'bg-orange-500/20 text-orange-400' :
-                  item.color === 'pink' ? 'bg-pink-500/20 text-pink-400' :
-                  'bg-blue-500/20 text-blue-400'
-                }`}>
+                    item.color === 'green' ? 'bg-green-500/20 text-green-400' :
+                      item.color === 'orange' ? 'bg-orange-500/20 text-orange-400' :
+                        item.color === 'pink' ? 'bg-pink-500/20 text-pink-400' :
+                          'bg-blue-500/20 text-blue-400'
+                  }`}>
                   {item.status}
                 </span>
               </div>
@@ -127,14 +126,13 @@ const CurrentExploration = () => {
                 </div>
                 <div className="w-full bg-gray-700 rounded-full h-2">
                   <div
-                    className={`h-full rounded-full transition-all duration-1000 ease-out ${
-                      item.color === 'cyan' ? 'bg-gradient-to-r from-cyan-500 to-cyan-400' :
+                    className={`h-full rounded-full transition-all duration-1000 ease-out ${item.color === 'cyan' ? 'bg-gradient-to-r from-cyan-500 to-cyan-400' :
                       item.color === 'purple' ? 'bg-gradient-to-r from-purple-500 to-purple-400' :
-                      item.color === 'green' ? 'bg-gradient-to-r from-green-500 to-green-400' :
-                      item.color === 'orange' ? 'bg-gradient-to-r from-orange-500 to-orange-400' :
-                      item.color === 'pink' ? 'bg-gradient-to-r from-pink-500 to-pink-400' :
-                      'bg-gradient-to-r from-blue-500 to-blue-400'
-                    }`}
+                        item.color === 'green' ? 'bg-gradient-to-r from-green-500 to-green-400' :
+                          item.color === 'orange' ? 'bg-gradient-to-r from-orange-500 to-orange-400' :
+                            item.color === 'pink' ? 'bg-gradient-to-r from-pink-500 to-pink-400' :
+                              'bg-gradient-to-r from-blue-500 to-blue-400'
+                      }`}
                     style={{ width: `${item.progress}%` }}
                   />
                 </div>

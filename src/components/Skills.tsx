@@ -11,12 +11,12 @@ const Skills = () => {
     { name: 'Machine Learning', color: '#10B981' },
     { name: 'Git/GitHub', color: '#3B82F6' },
     { name: 'Node.js', color: '#8B5CF6' },
-    { name: 'SQL', color: '#8B5CF6' },
-    { name: 'MongoDB', color: '#8B5CF6' },
-    { name: 'FastAPI', color: '#8B5CF6' },
-    { name: 'Java', color: '#8B5CF6' },
-    { name: 'DSA', color: '#8B5CF6' },
-    { name: 'Flutter', color: '#8B5CF6' },
+    { name: 'SQL', color: '#00D4FF' },
+    { name: 'MongoDB', color: '#00FF94' },
+    { name: 'FastAPI', color: '#F97316' },
+    { name: 'Java', color: '#EF4444' },
+    { name: 'DSA', color: '#10B981' },
+    { name: 'Flutter', color: '#3B82F6' },
     { name: 'n8n', color: '#8B5CF6' },
 
   ];

@@ -1,6 +1,7 @@
 import React, { useEffect, useState, } from 'react';
 import { ChevronDown, Code, Cpu, Zap } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import Timeline from './Timeline';
 
 const Hero = () => {
   const [currentText, setCurrentText] = useState('');
@@ -25,8 +26,10 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Main Content */}
+    <>
+      {/* Page 1: Hero Section */}
+      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+        {/* Main Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <div className="mb-8">
           <h3 className="text-5xl md:text-7xl font-bold mb-4 gradient-text">
@@ -75,10 +78,29 @@ const Hero = () => {
       </div>
 
       {/* Scroll Indicator */}
-      {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ChevronDown className="w-6 h-6 text-cyan-400" />
-      </div> */}
+      <div 
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer opacity-70 hover:opacity-100 transition-opacity z-20"
+        onClick={() => document.getElementById('hero-timeline')?.scrollIntoView({ behavior: 'smooth' })}
+      >
+        <ChevronDown className="w-8 h-8 text-cyan-400" />
+      </div>
     </section>
+
+    {/* Page 2: Timeline Section */}
+    <section id="hero-timeline" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden py-12 md:py-20 bg-gray-900/20">
+      <div className="text-center mb-8 md:mb-16 relative z-10 w-full px-4">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">
+          My Journey
+        </h2>
+        <p className="text-xl text-gray-400">
+          The path of continuous learning and building.
+        </p>
+      </div>
+      
+      {/* Expandable Accordion Timeline */}
+      <Timeline />
+    </section>
+  </>
   );
 };
 

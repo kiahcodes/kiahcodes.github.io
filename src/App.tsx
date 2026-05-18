@@ -7,6 +7,7 @@ import Hackathons from "./components/Hackathons";
 import Skills from "./components/Skills";
 import CurrentExploration from "./components/CurrentExploration";
 import Internship from "./components/Internship";
+import Research from "./components/Research";
 import Contact from "./components/Contact";
 import LiquidEther from "./components/LiquidEther";
 import SideStaggerNav from "./components/SideStaggerNav";
@@ -65,6 +66,7 @@ function App() {
           <section id="skills"><Skills /></section>
           <section id="exploration"><CurrentExploration /></section>
           <section id="internship"><Internship /></section>
+          <section id="research"><Research /></section>
           <section id="contact"><Contact /></section>
         </div>
       </div>

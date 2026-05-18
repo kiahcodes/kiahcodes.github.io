@@ -19,12 +19,6 @@ const Internship = () => {
     'Technologies: React, FastAPI, PostgreSQL',
     'Duration: 1 month',
     'Achievements: Built a logistics route optimization system solving real-world delivery inefficiencies',
-
-    '$ git log --oneline',
-    'a1b2c3d Feature: User authentication system',
-    'e4f5g6h Fix: Database optimization',
-    'i7j8k9l Feature: Real-time notifications',
-    '$ exit',
   ];
 
   useEffect(() => {

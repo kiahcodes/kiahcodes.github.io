@@ -7,10 +7,11 @@ const SECTIONS = [
     { id: 'skills', label: 'Skills', index: 19 },
     { id: 'exploration', label: 'Exploration', index: 24 },
     { id: 'internship', label: 'Internship', index: 29 },
-    { id: 'contact', label: 'Contact', index: 34 },
+    { id: 'research', label: 'Research', index: 34 },
+    { id: 'contact', label: 'Contact', index: 39 },
 ];
 
-const TOTAL_LINES = 39;
+const TOTAL_LINES = 44;
 
 const SideStaggerNav = () => {
     const [activeSection, setActiveSection] = useState('home');
