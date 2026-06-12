@@ -9,7 +9,7 @@ const Timeline = () => {
       icon: GraduationCap,
       title: 'SSC',
       date: '2022',
-      description: 'Bagged 96.4% score.',
+      description: 'Graduated SSC with 96.4% score.',
       color: 'purple',
       gradient: 'from-purple-500/20 to-fuchsia-500/20',
       activeGradient: 'from-purple-500 to-fuchsia-500'
@@ -18,7 +18,7 @@ const Timeline = () => {
       icon: GraduationCap,
       title: 'HSC',
       date: '2024',
-      description: 'Bagged 93% in PCM and 97.6%tile',
+      description: 'Completed HSC with 93% in PCM and a 97.6 percentile in JEE Mains.',
       color: 'green',
       gradient: 'from-green-500/20 to-emerald-500/20',
       activeGradient: 'from-green-500 to-emerald-500'
