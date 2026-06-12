@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
 
 const SECTIONS = [
     { id: 'home', label: 'Home', index: 4 },
@@ -13,9 +14,12 @@ const SECTIONS = [
 
 const TOTAL_LINES = 44;
 
+const MOBILE_BREAKPOINT = 768;
+
 const SideStaggerNav = () => {
     const [activeSection, setActiveSection] = useState('home');
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -36,17 +40,49 @@ const SideStaggerNav = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= MOBILE_BREAKPOINT) {
+                setIsMobileMenuOpen(false);
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     const handleClick = (id: string) => {
         const el = document.getElementById(id);
         if (el) {
             el.scrollIntoView({ behavior: 'smooth' });
         }
+        setIsMobileMenuOpen(false);
     };
 
     return (
         <div className="fixed right-0 top-0 h-screen flex flex-col justify-center items-end z-50 pointer-events-none">
+            <button
+                type="button"
+                className="md:hidden pointer-events-auto fixed top-4 right-4 z-[60] p-2.5 rounded-lg bg-gray-900/90 backdrop-blur-sm border border-[#3afeda]/30 text-[#3afeda] shadow-lg"
+                onClick={() => setIsMobileMenuOpen((open) => !open)}
+                aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+                aria-expanded={isMobileMenuOpen}
+            >
+                {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+
+            {isMobileMenuOpen && (
+                <button
+                    type="button"
+                    className="md:hidden pointer-events-auto fixed inset-0 z-[55] bg-gray-900/60 backdrop-blur-sm"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    aria-label="Close navigation menu"
+                />
+            )}
+
             <div
-                className="pointer-events-auto flex flex-col justify-center items-end group px-6 py-8"
+                className={`pointer-events-auto flex flex-col justify-center items-end group px-6 py-8 z-[56]
+                    ${isMobileMenuOpen ? 'flex' : 'hidden md:flex'}`}
                 onMouseLeave={() => setHoveredIndex(null)}
             >
                 {Array.from({ length: TOTAL_LINES }).map((_, i) => {

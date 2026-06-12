@@ -7,22 +7,41 @@ const Timeline = () => {
   const timelineData = [
     {
       icon: GraduationCap,
-      title: 'Started B.Tech',
-      date: '2024',
-      description: 'Embarked on my CSE journey, diving deep into programming fundamentals and algorithmic problem solving.',
-      color: 'cyan',
-      gradient: 'from-cyan-500/20 to-blue-500/20',
-      activeGradient: 'from-cyan-500 to-blue-500'
+      title: 'SSC',
+      date: '2022',
+      description: 'Bagged 96.4% score.',
+      color: 'purple',
+      gradient: 'from-purple-500/20 to-fuchsia-500/20',
+      activeGradient: 'from-purple-500 to-fuchsia-500'
     },
     {
-      icon: Code,
-      title: 'Fitness Tracker',
-      date: '2025',
-      description: 'Developed a comprehensive fitness tracking application with React and Firebase, featuring real-time data visualization.',
+      icon: GraduationCap,
+      title: 'HSC',
+      date: '2024',
+      description: 'Bagged 93% in PCM and 97.6%tile',
       color: 'green',
       gradient: 'from-green-500/20 to-emerald-500/20',
       activeGradient: 'from-green-500 to-emerald-500'
     },
+    {
+      icon: GraduationCap,
+      title: 'Btech CSE',
+      date: '2024',
+      description: 'Started BTech in CSE at Nirma Institute of Technology',
+      color: 'blue',
+      gradient: 'from-blue-500/20 to-sky-500/20',
+      activeGradient: 'from-blue-500 to-sky-500'
+    },
+    
+    // {
+    //   icon: Code,
+    //   title: 'Fitness Tracker',
+    //   date: '2025',
+    //   description: 'Developed a comprehensive fitness tracking application with HTML and CSS.',
+    //   color: 'green',
+    //   gradient: 'from-green-500/20 to-emerald-500/20',
+    //   activeGradient: 'from-green-500 to-emerald-500'
+    // },
     {
       icon: Brain,
       title: 'ML Course',
@@ -34,9 +53,18 @@ const Timeline = () => {
     },
     {
       icon: Building,
-      title: 'ScaleTech Intern',
+      title: 'FSD Intern',
       date: '2025',
-      description: 'Real-world software development with cutting-edge technologies, focusing on scalable systems and routing algorithms.',
+      description: 'Real-world fullstack software development focusing on scalable systems and routing algorithms with React at Scaletech.',
+      color: 'purple',
+      gradient: 'from-purple-500/20 to-fuchsia-500/20',
+      activeGradient: 'from-purple-500 to-fuchsia-500'
+    },
+    {
+      icon: Building,
+      title: 'AIML Intern',
+      date: 'June 2026',
+      description: 'Worked to orchestrate multitenant Long context LLM finetuning for enterprise level chatbot at Bonrix Software Systems',
       color: 'purple',
       gradient: 'from-purple-500/20 to-fuchsia-500/20',
       activeGradient: 'from-purple-500 to-fuchsia-500'
