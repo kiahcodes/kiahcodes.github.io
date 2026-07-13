@@ -16,7 +16,12 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # OPTIONAL: If your project needs a build step (e.g., React/Vite), uncomment below:
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
       - name: Install and Build
         run: |
           npm ci
@@ -25,8 +30,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Change to "dist" or "build" if using a build framework
-          path: "."
+          path: "dist"
 
       - name: Deploy to GitHub Pages
         id: deployment
