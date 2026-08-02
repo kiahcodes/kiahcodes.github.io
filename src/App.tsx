@@ -5,7 +5,6 @@ import Hero from "./components/Hero";
 import Projects from "./components/Projects";
 import Hackathons from "./components/Hackathons";
 import Skills from "./components/Skills";
-import CurrentExploration from "./components/CurrentExploration";
 import Internship from "./components/Internship";
 import Research from "./components/Research";
 import Contact from "./components/Contact";
@@ -64,7 +63,6 @@ function App() {
           <section id="projects"><Projects /></section>
           <section id="hackathons"><Hackathons /></section>
           <section id="skills"><Skills /></section>
-          <section id="exploration"><CurrentExploration /></section>
           <section id="internship"><Internship /></section>
           <section id="research"><Research /></section>
           <section id="contact"><Contact /></section>

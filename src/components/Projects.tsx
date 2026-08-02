@@ -1,5 +1,13 @@
-import { useEffect, useRef } from 'react';
-import { ExternalLink, Github, Dumbbell, ShoppingCart, Navigation, Calculator } from 'lucide-react';
+import { useEffect, useRef } from "react";
+import {
+  ExternalLink,
+  Github,
+  Dumbbell,
+  ShoppingCart,
+  Navigation,
+  Calculator,
+  ScanLine,
+} from "lucide-react";
 
 const Projects = () => {
   const projectsRef = useRef<HTMLElement>(null);
@@ -9,15 +17,15 @@ const Projects = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            entry.target.classList.add("visible");
           }
         });
       },
-      { threshold: 0.1, rootMargin: '50px' }
+      { threshold: 0.1, rootMargin: "50px" },
     );
 
     if (projectsRef.current) {
-      const items = projectsRef.current.querySelectorAll('.project-item');
+      const items = projectsRef.current.querySelectorAll(".project-item");
       items.forEach((item) => observer.observe(item));
     }
 
@@ -27,77 +35,153 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'Truck Routing Optimization Web App',
-      description: 'A full-stack web application designed to solve the Vehicle Routing Problem using machine learning and routing algorithms.',
-      image: '/routing.png',
+      title: "Truck Routing Optimization Web App",
+      description:
+        "A full-stack web application designed to solve the Vehicle Routing Problem using machine learning and routing algorithms.",
+      image: "/routing.png",
       icon: Navigation,
-      techStack: ['ReactJS', 'Python (FastAPI)', 'PostgreSQL', 'OR-Tools', 'KMeans', 'OSRM'],
-      features: [
-        'Uses KMeans clustering to strategically group destinations',
-        'Integrates OSRM for accurate real-world distances',
-        'Solves the complex Vehicle Routing Problem utilizing OR-Tools'
+      techStack: [
+        "ReactJS",
+        "Python (FastAPI)",
+        "PostgreSQL",
+        "OR-Tools",
+        "KMeans",
+        "OSRM",
       ],
-      color: 'cyan',
-      github: 'https://github.com/kiahcodes/VehicleRoutingReactFastAPI.git',
-      live: '#',
+      features: [
+        "Uses KMeans clustering to strategically group destinations",
+        "Integrates OSRM for accurate real-world distances",
+        "Solves the complex Vehicle Routing Problem utilizing OR-Tools",
+      ],
+      color: "cyan",
+      github: "https://github.com/kiahcodes/VehicleRoutingReactFastAPI.git",
+      live: "#",
     },
     {
       id: 2,
-      title: 'Numerology Calculator',
-      description: 'A logic-based calculator that computes various numerological numbers based on Chaldean numerology principles.',
-      image: 'https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=800',
-      icon: Calculator,
-      techStack: ['C'],
-      features: [
-        'Calculates Birth Number securely and instantly',
-        'Generates Life Path Number based on exact date inputs',
-        'Computes Personality Number adhering to Chaldean numerology'
+      title: "LabelLens",
+      description:
+        "A mobile app to extract ingredients from product labels to identify potentially harmful substances, verify marketing claims and recommend safer alternatives.",
+      image: "./labellens.png",
+      icon: ScanLine,
+      techStack: [
+        "Flutter",
+        "FastAPI",
+        "Supabase",
+        "Google ML Kit",
+        "Groq API",
+        "TTS/STT",
       ],
-      color: 'purple',
-      github: '#',
-      live: '#',
+      features: [
+        "Extracts ingredients from product labels using Google ML Kit OCR",
+        "Identifies potentially harmful substances via Groq-powered LLM analysis",
+        "Verifies marketing claims and recommends safer alternatives",
+        "Supports voice-based chatbot interaction with TTS/STT",
+      ],
+      color: "pink",
+      github: "https://github.com/kiahcodes/LabelLens_app.git",
+      live: "https://drive.google.com/file/d/19U8qgtSPdYmUVBlrJwgZuO9B0OJhTTLj/view?usp=sharing",
     },
     {
       id: 3,
-      title: 'Shopping Website',
-      description: 'A responsive clothing e-commerce website with a strong focus on navigation and highly interactive UI/UX elements.',
-      image: 'https://images.pexels.com/photos/34577/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=800',
-      icon: ShoppingCart,
-      techStack: ['HTML', 'CSS', 'JavaScript'],
+      title: "Fitness Tracking Website",
+      description:
+        "A workout planning platform enabling users to track metrics and plan their fitness journeys seamlessly.",
+      image:
+        "https://images.pexels.com/photos/4162491/pexels-photo-4162491.jpeg?auto=compress&cs=tinysrgb&w=800",
+      icon: Dumbbell,
+      techStack: ["HTML", "CSS", "JavaScript"],
       features: [
-        'Fully responsive clothing showcase layout',
-        'Interactive sign-in and sign-up toggle system',
-        'Optimized UI/UX tailored for smooth intuitive navigation'
+        "Comprehensive workout planning and tracking platform",
+        "Integrated BMI calculator for personalized metric monitoring",
+        "Secure user authentication feature",
       ],
-      color: 'green',
-      github: '#',
-      live: '#',
+      color: "orange",
+      github: "https://github.com/kiahcodes/FitTrack.git",
+      live: "https://kiahcodes.github.io/FitTrack/",
     },
     {
       id: 4,
-      title: 'Fitness Tracking Website',
-      description: 'A workout planning platform enabling users to track metrics and plan their fitness journeys seamlessly.',
-      image: 'https://images.pexels.com/photos/4162491/pexels-photo-4162491.jpeg?auto=compress&cs=tinysrgb&w=800',
-      icon: Dumbbell,
-      techStack: ['HTML', 'CSS', 'JavaScript'],
+      title: "Shopping Website",
+      description:
+        "A responsive clothing e-commerce website with a strong focus on navigation and highly interactive UI/UX elements.",
+      image:
+        "https://images.pexels.com/photos/34577/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=800",
+      icon: ShoppingCart,
+      techStack: ["HTML", "CSS", "JavaScript"],
       features: [
-        'Comprehensive workout planning and tracking platform',
-        'Integrated BMI calculator for personalized metric monitoring',
-        'Secure user authentication feature'
+        "Fully responsive clothing showcase layout",
+        "Interactive sign-in and sign-up toggle system",
+        "Optimized UI/UX tailored for smooth intuitive navigation",
       ],
-      color: 'orange',
-      github: '#',
-      live: '#',
+      color: "green",
+      github: "#",
+      live: "#",
+    },
+    {
+      id: 5,
+      title: "Numerology Calculator",
+      description:
+        "A logic-based calculator that computes various numerological numbers based on Chaldean numerology principles.",
+      image:
+        "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=800",
+      icon: Calculator,
+      techStack: ["C"],
+      features: [
+        "Calculates Birth Number securely and instantly",
+        "Generates Life Path Number based on exact date inputs",
+        "Computes Personality Number adhering to Chaldean numerology",
+      ],
+      color: "purple",
+      github: "#",
+      live: "#",
     },
   ];
 
   const getColorClasses = (color: string) => {
     switch (color) {
-      case 'cyan': return { border: 'border-cyan-400', text: 'text-cyan-400', check: 'bg-cyan-400', btn: 'bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400' };
-      case 'purple': return { border: 'border-purple-400', text: 'text-purple-400', check: 'bg-purple-400', btn: 'bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400' };
-      case 'green': return { border: 'border-green-400', text: 'text-green-400', check: 'bg-green-400', btn: 'bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-400 hover:to-emerald-400' };
-      case 'orange': return { border: 'border-orange-400', text: 'text-orange-400', check: 'bg-orange-400', btn: 'bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-400 hover:to-yellow-400' };
-      default: return { border: 'border-cyan-400', text: 'text-cyan-400', check: 'bg-cyan-400', btn: 'bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400' };
+      case "cyan":
+        return {
+          border: "border-cyan-400",
+          text: "text-cyan-400",
+          check: "bg-cyan-400",
+          btn: "bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400",
+        };
+      case "purple":
+        return {
+          border: "border-purple-400",
+          text: "text-purple-400",
+          check: "bg-purple-400",
+          btn: "bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400",
+        };
+      case "green":
+        return {
+          border: "border-green-400",
+          text: "text-green-400",
+          check: "bg-green-400",
+          btn: "bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-400 hover:to-emerald-400",
+        };
+      case "orange":
+        return {
+          border: "border-orange-400",
+          text: "text-orange-400",
+          check: "bg-orange-400",
+          btn: "bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-400 hover:to-yellow-400",
+        };
+      case "pink":
+        return {
+          border: "border-pink-400",
+          text: "text-pink-400",
+          check: "bg-pink-400",
+          btn: "bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-400 hover:to-rose-400",
+        };
+      default:
+        return {
+          border: "border-cyan-400",
+          text: "text-cyan-400",
+          check: "bg-cyan-400",
+          btn: "bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400",
+        };
     }
   };
 
@@ -114,13 +198,17 @@ const Projects = () => {
             return (
               <div
                 key={project.id}
-                className={`project-item fade-up grid md:grid-cols-2 gap-8 items-center ${index % 2 === 1 ? 'md:grid-flow-dense' : ''
-                  }`}
+                className={`project-item fade-up grid md:grid-cols-2 gap-8 items-center ${
+                  index % 2 === 1 ? "md:grid-flow-dense" : ""
+                }`}
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 {/* Project Image */}
-                <div className={`relative overflow-hidden rounded-2xl ${index % 2 === 1 ? 'md:col-start-2' : ''
-                  }`}>
+                <div
+                  className={`relative overflow-hidden rounded-2xl ${
+                    index % 2 === 1 ? "md:col-start-2" : ""
+                  }`}
+                >
                   <img
                     src={project.image}
                     alt={project.title}
@@ -136,8 +224,11 @@ const Projects = () => {
                 </div>
 
                 {/* Project Details */}
-                <div className={`space-y-6 ${index % 2 === 1 ? 'md:col-start-1' : ''
-                  }`}>
+                <div
+                  className={`space-y-6 ${
+                    index % 2 === 1 ? "md:col-start-1" : ""
+                  }`}
+                >
                   <div>
                     <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
                       {project.title}
@@ -148,7 +239,9 @@ const Projects = () => {
                   </div>
 
                   <div>
-                    <h4 className={`text-lg font-semibold ${colors.text} mb-3`}>Tech Stack</h4>
+                    <h4 className={`text-lg font-semibold ${colors.text} mb-3`}>
+                      Tech Stack
+                    </h4>
                     <div className="flex flex-wrap gap-2">
                       {project.techStack.map((tech, techIndex) => (
                         <span
@@ -162,32 +255,45 @@ const Projects = () => {
                   </div>
 
                   <div>
-                    <h4 className="text-lg font-semibold text-white mb-3">Key Features</h4>
+                    <h4 className="text-lg font-semibold text-white mb-3">
+                      Key Features
+                    </h4>
                     <ul className="space-y-2">
                       {project.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="text-gray-300 flex items-start">
-                          <span className={`w-2 h-2 ${colors.check} rounded-full mr-3 mt-2 flex-shrink-0`} />
+                        <li
+                          key={featureIndex}
+                          className="text-gray-300 flex items-start"
+                        >
+                          <span
+                            className={`w-2 h-2 ${colors.check} rounded-full mr-3 mt-2 flex-shrink-0`}
+                          />
                           <span>{feature}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <div className="flex gap-4">
+                  <div className="flex flex-wrap gap-3">
                     <a
                       href={project.github}
-                      className="glow-button flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="glow-button inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-white px-5 py-2.5 rounded-full font-semibold transition-all duration-300"
                     >
-                      <Github className="w-5 h-5" />
-                      Code
+                      <Github className="w-4 h-4" />
+                      GitHub
                     </a>
-                    {/* <a
-                      href={project.live}
-                      className={`glow-button flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${colors.btn} text-white`}
-                    >
-                      <ExternalLink className="w-5 h-5" />
-                      Live Demo
-                    </a> */}
+                    {project.live !== "#" && (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`glow-button inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold hover:scale-105 transition-all duration-300 ${colors.btn} text-white`}
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        Demo
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>

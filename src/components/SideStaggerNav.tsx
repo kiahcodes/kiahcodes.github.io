@@ -3,13 +3,12 @@ import { Menu, X } from 'lucide-react';
 
 const SECTIONS = [
     { id: 'home', label: 'Home', index: 4 },
-    { id: 'projects', label: 'Projects', index: 9 },
-    { id: 'hackathons', label: 'Hackathons', index: 14 },
-    { id: 'skills', label: 'Skills', index: 19 },
-    { id: 'exploration', label: 'Exploration', index: 24 },
-    { id: 'internship', label: 'Internship', index: 29 },
+    { id: 'projects', label: 'Projects', index: 10 },
+    { id: 'hackathons', label: 'Hackathons', index: 16 },
+    { id: 'skills', label: 'Skills', index: 22 },
+    { id: 'internship', label: 'Internship', index: 28 },
     { id: 'research', label: 'Research', index: 34 },
-    { id: 'contact', label: 'Contact', index: 39 },
+    { id: 'contact', label: 'Contact', index: 40 },
 ];
 
 const TOTAL_LINES = 44;
