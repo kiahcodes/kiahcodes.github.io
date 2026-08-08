@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { ChevronDown, Code, Cpu, Zap } from "lucide-react";
+import { ChevronDown, Code, Cpu, Zap, Github, Linkedin } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Timeline from "./Timeline";
 
+const TAGLINES = [
+  "Transforming ideas into intelligent solutions",
+  "Building AI systems that think and act",
+  "Full-stack builder. AI tinkerer. Problem solver.",
+];
+
 const Hero = () => {
   const [currentText, setCurrentText] = useState("");
-  const fullText = "Transforming ideas into intelligent solutions";
   const navigate = useNavigate();
 
   const goTo = (section: string): void => {
@@ -13,16 +18,39 @@ const Hero = () => {
   };
 
   useEffect(() => {
-    // Typing animation
-    let index = 0;
-    const typeText = () => {
-      if (index < fullText.length) {
-        setCurrentText(fullText.slice(0, index + 1));
-        index++;
-        setTimeout(typeText, 100);
+    // Typewriter loop: type a tagline, pause, delete, move to the next
+    let taglineIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+    let timeoutId: ReturnType<typeof setTimeout>;
+
+    const tick = () => {
+      const fullText = TAGLINES[taglineIndex];
+
+      if (!deleting) {
+        charIndex++;
+        setCurrentText(fullText.slice(0, charIndex));
+        if (charIndex === fullText.length) {
+          deleting = true;
+          timeoutId = setTimeout(tick, 1800);
+          return;
+        }
+        timeoutId = setTimeout(tick, 80);
+      } else {
+        charIndex--;
+        setCurrentText(fullText.slice(0, charIndex));
+        if (charIndex === 0) {
+          deleting = false;
+          taglineIndex = (taglineIndex + 1) % TAGLINES.length;
+          timeoutId = setTimeout(tick, 400);
+          return;
+        }
+        timeoutId = setTimeout(tick, 35);
       }
     };
-    setTimeout(typeText, 1000);
+
+    timeoutId = setTimeout(tick, 1000);
+    return () => clearTimeout(timeoutId);
   }, []);
 
   return (
@@ -58,6 +86,59 @@ const Hero = () => {
             </div>
           </div>
 
+          <div className="flex justify-center gap-4 mb-8">
+            <a
+              href="https://github.com/kiahcodes"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="GitHub"
+              aria-label="GitHub"
+              className="glow-button w-11 h-11 rounded-full border border-gray-700 bg-gray-800/60 backdrop-blur-sm flex items-center justify-center text-gray-300 hover:text-cyan-400 hover:border-cyan-400 hover:-translate-y-1 transition-all duration-300"
+            >
+              <Github className="w-5 h-5" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/kiah-mandaliya/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="LinkedIn"
+              aria-label="LinkedIn"
+              className="glow-button w-11 h-11 rounded-full border border-gray-700 bg-gray-800/60 backdrop-blur-sm flex items-center justify-center text-gray-300 hover:text-cyan-400 hover:border-cyan-400 hover:-translate-y-1 transition-all duration-300"
+            >
+              <Linkedin className="w-5 h-5" />
+            </a>
+            <a
+              href="https://leetcode.com/u/kiah14_/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="LeetCode"
+              aria-label="LeetCode"
+              className="glow-button w-11 h-11 rounded-full border border-gray-700 bg-gray-800/60 backdrop-blur-sm flex items-center justify-center text-xs font-bold text-gray-300 hover:text-orange-400 hover:border-orange-400 hover:-translate-y-1 transition-all duration-300"
+            >
+              LC
+            </a>
+            <a
+              href="https://codeforces.com/profile/kiahdmandaliya"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Codeforces"
+              aria-label="Codeforces"
+              className="glow-button w-11 h-11 rounded-full border border-gray-700 bg-gray-800/60 backdrop-blur-sm flex items-center justify-center text-xs font-bold text-gray-300 hover:text-blue-400 hover:border-blue-400 hover:-translate-y-1 transition-all duration-300"
+            >
+              CF
+            </a>
+            <a
+              href="https://www.codechef.com/users/kiah14"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="CodeChef"
+              aria-label="CodeChef"
+              className="glow-button w-11 h-11 rounded-full border border-gray-700 bg-gray-800/60 backdrop-blur-sm flex items-center justify-center text-xs font-bold text-gray-300 hover:text-amber-400 hover:border-amber-400 hover:-translate-y-1 transition-all duration-300"
+            >
+              CC
+            </a>
+          </div>
+
           <div className="flex justify-center gap-4">
             <button
               className="glow-button bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105"
@@ -81,14 +162,17 @@ const Hero = () => {
 
         {/* Scroll Indicator */}
         <div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer opacity-70 hover:opacity-100 transition-opacity z-20"
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-1 cursor-pointer opacity-70 hover:opacity-100 transition-opacity z-20"
           onClick={() =>
             document
               .getElementById("hero-timeline")
               ?.scrollIntoView({ behavior: "smooth" })
           }
         >
-          <ChevronDown className="w-8 h-8 text-cyan-400" />
+          <span className="text-xs tracking-widest text-cyan-400 uppercase">
+            Scroll to explore
+          </span>
+          <ChevronDown className="w-8 h-8 text-cyan-400 animate-bounce" />
         </div>
       </section>
 

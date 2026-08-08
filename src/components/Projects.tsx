@@ -55,7 +55,7 @@ const Projects = () => {
       ],
       color: "cyan",
       github: "https://github.com/kiahcodes/VehicleRoutingReactFastAPI.git",
-      live: "#",
+      live: "/demo.mp4",
     },
     {
       id: 2,

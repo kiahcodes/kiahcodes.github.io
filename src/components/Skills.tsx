@@ -26,42 +26,36 @@ const Skills = () => {
       title: "Competitive Programming",
       status: "Practicing",
       color: "cyan",
-      progress: 60,
     },
     {
       icon: Server,
       title: "Agentic AI",
       status: "Practicing",
       color: "purple",
-      progress: 70,
     },
     {
       icon: Code,
       title: "RAG",
       status: "Practicing",
       color: "blue",
-      progress: 75,
     },
     {
       icon: Code,
       title: "MCP",
       status: "Exploring",
       color: "green",
-      progress: 50,
     },
     {
       icon: Cloud,
       title: "Cloud Computing",
       status: "Interested",
       color: "orange",
-      progress: 30,
     },
     {
       icon: Zap,
       title: "LangChain",
       status: "Interested",
       color: "pink",
-      progress: 20,
     },
   ];
 
@@ -159,12 +153,6 @@ const Skills = () => {
                   <h4 className="text-xs font-semibold text-white mb-2 leading-tight">
                     {item.title}
                   </h4>
-                  <div className="w-full bg-gray-700 rounded-full h-1">
-                    <div
-                      className={`h-full rounded-full bg-gradient-to-r transition-all duration-1000 ease-out ${colors.bar}`}
-                      style={{ width: `${item.progress}%` }}
-                    />
-                  </div>
                 </div>
               );
             })}
