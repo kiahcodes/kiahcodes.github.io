@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Mail, Github, Linkedin, Send, MapPin } from "lucide-react";
+import { Send } from "lucide-react";
 const Contact = () => {
   const contactRef = useRef<HTMLElement>(null);
   useEffect(() => {
@@ -19,22 +19,6 @@ const Contact = () => {
     }
     return () => observer.disconnect();
   }, []);
-  const socialLinks = [
-    {
-      icon: Github,
-      name: "GitHub",
-      url: "https://github.com/kiahcodes",
-      color: "text-gray-400 hover:text-white",
-      bgColor: "hover:bg-gray-800",
-    },
-    {
-      icon: Linkedin,
-      name: "LinkedIn",
-      url: "https://www.linkedin.com/in/kiah-mandaliya/",
-      color: "text-blue-400 hover:text-blue-300",
-      bgColor: "hover:bg-blue-500/20",
-    },
-  ];
   return (
     <section
       ref={contactRef}
@@ -58,12 +42,10 @@ const Contact = () => {
             I'd love to hear from you!
           </p>
         </div>
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="w-full flex flex-col gap-8">
           {/* Contact Form */}
           <div className="contact-item fade-up bg-gray-800/60 backdrop-blur-sm rounded-2xl p-8 border border-gray-700">
-            <h3 className="text-2xl font-bold text-white mb-6">
-              Send a Message
-            </h3>
+            <h3 className="text-2xl font-bold text-ink mb-6">Send a Message</h3>
             {/* Note for User: Replace action URL with your Formspree/Web3Forms/Getform endpoint */}
             <form
               action="https://api.web3forms.com/submit"
@@ -84,7 +66,7 @@ const Contact = () => {
                   type="text"
                   name="name"
                   required
-                  className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/20 transition-colors text-white"
+                  className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/20 transition-colors text-ink"
                   placeholder="Enter your name"
                 />
               </div>
@@ -97,7 +79,7 @@ const Contact = () => {
                   type="email"
                   name="email"
                   required
-                  className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/20 transition-colors text-white"
+                  className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/20 transition-colors text-ink"
                   placeholder="Enter your email"
                 />
               </div>
@@ -110,7 +92,7 @@ const Contact = () => {
                   name="message"
                   required
                   rows={4}
-                  className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/20 transition-colors text-white resize-none"
+                  className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/20 transition-colors text-ink resize-none"
                   placeholder="Write your message..."
                 />
               </div>
@@ -129,63 +111,7 @@ const Contact = () => {
           <div
             className="contact-item fade-up space-y-8"
             style={{ animationDelay: "0.2s" }}
-          >
-            <div className="bg-gray-800/60 backdrop-blur-sm rounded-2xl p-8 border border-gray-700">
-              <h3 className="text-2xl font-bold text-white mb-6">
-                Get in Touch
-              </h3>
-              <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center">
-                    <Mail className="w-6 h-6 text-cyan-400" />
-                  </div>
-                  <div>
-                    <p className="text-gray-300">Email</p>
-                    <p className="text-white font-semibold">
-                      kiahdmandaliya@gmail.com
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-purple-400" />
-                  </div>
-                  <div>
-                    <p className="text-gray-300">Location</p>
-                    <p className="text-white font-semibold">Ahmedabad, India</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Social Links */}
-            <div className="bg-gray-800/60 backdrop-blur-sm rounded-2xl p-5 border border-gray-700">
-              <h3 className="text-lg font-bold text-white mb-4">
-                Find me Online
-              </h3>
-              <div className="flex gap-4">
-                {socialLinks.map((link, index) => (
-                  <a
-                    key={index}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`w-12 h-12 rounded-xl border border-gray-600 flex items-center justify-center transition-all duration-300 ${link.color} ${link.bgColor} hover:border-opacity-0 hover:scale-110`}
-                  >
-                    <link.icon className="w-5 h-5" />
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            {/* Status */}
-            <div className="text-center">
-              <div className="inline-flex items-center gap-3 bg-green-500/20 text-green-400 px-6 py-3 rounded-full font-semibold">
-                <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
-                Available for opportunities
-              </div>
-            </div>
-          </div>
+          ></div>
         </div>
       </div>
     </section>

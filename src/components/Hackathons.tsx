@@ -115,7 +115,7 @@ const Hackathons = () => {
                                     <div className="flex-grow space-y-4">
                                         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                                             <div>
-                                                <h3 className="text-2xl font-bold text-white flex items-center gap-3">
+                                                <h3 className="text-2xl font-bold text-ink flex items-center gap-3">
                                                     {item.title}
                                                 </h3>
                                                 <div className="flex flex-wrap gap-3 mt-2">
@@ -137,7 +137,7 @@ const Hackathons = () => {
                                                     className={`flex items-center gap-2 px-4 py-2 rounded-xl bg-gray-700/40 border border-gray-600 hover:border-${item.color}-400/50 transition-all duration-300 group/github hover:shadow-[0_0_15px_rgba(34,211,238,0.1)]`}
                                                 >
                                                     <Github className={`w-5 h-5 ${colors.text} group-hover/github:scale-110 transition-transform`} />
-                                                    <span className="text-sm font-semibold text-gray-300 group-hover/github:text-white">View Code</span>
+                                                    <span className="text-sm font-semibold text-gray-300 group-hover/github:text-ink">View Code</span>
                                                 </a>
                                             )}
                                         </div>
@@ -147,7 +147,7 @@ const Hackathons = () => {
                                         </p>
 
                                         <div>
-                                            <h4 className="text-sm font-semibold text-white mb-3 uppercase tracking-wider">Key Contributions</h4>
+                                            <h4 className="text-sm font-semibold text-ink mb-3 uppercase tracking-wider">Key Contributions</h4>
                                             <ul className="space-y-2">
                                                 {item.contributions.map((contribution, idx) => (
                                                     <li key={idx} className="text-gray-300 flex items-start text-sm md:text-base">

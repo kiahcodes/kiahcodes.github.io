@@ -1,7 +1,9 @@
 import { Smartphone, Server, Cloud, Zap, Code } from "lucide-react";
 import SkillSphere from "./SkillSphere";
+import { tone, useTheme } from "../theme";
 
 const Skills = () => {
+  const theme = useTheme();
   const skills = [
     { name: "C/C++ Programming", color: "#00D4FF" },
     { name: "HTML/CSS", color: "#8B5CF6" },
@@ -110,13 +112,13 @@ const Skills = () => {
                 <div
                   className="w-12 h-12 mb-3 rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0"
                   style={{
-                    backgroundColor: `${skill.color}20`,
-                    color: skill.color,
+                    backgroundColor: `${tone(skill.color, theme)}20`,
+                    color: tone(skill.color, theme),
                   }}
                 >
                   {skill.name.charAt(0)}
                 </div>
-                <h4 className="text-sm font-medium text-white break-words w-full">
+                <h4 className="text-sm font-medium text-ink break-words w-full">
                   {skill.name}
                 </h4>
               </div>
@@ -126,7 +128,7 @@ const Skills = () => {
 
         {/* Current Explorations */}
         <div>
-          <h3 className="text-xl font-bold text-white mb-1">
+          <h3 className="text-xl font-bold text-ink mb-1">
             Currently Exploring
           </h3>
 
@@ -150,7 +152,7 @@ const Skills = () => {
                       {item.status}
                     </span>
                   </div>
-                  <h4 className="text-xs font-semibold text-white mb-2 leading-tight">
+                  <h4 className="text-xs font-semibold text-ink mb-2 leading-tight">
                     {item.title}
                   </h4>
                 </div>

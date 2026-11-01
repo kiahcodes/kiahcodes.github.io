@@ -262,3 +262,19 @@ html {
 .fade-in.visible {
   opacity: 1;
 }
+
+/* ---------- Light theme overrides ---------- */
+html.light ::-webkit-scrollbar-track { background: rgb(var(--c-gray-950)); }
+html.light ::-webkit-scrollbar-thumb { background: rgb(var(--c-cyan-400)); }
+html.light .gradient-text { background: none; -webkit-text-fill-color: currentColor; color: rgb(var(--c-ink)); }
+html.light .glow-button::before { display: none; }
+html.light .hover-lift:hover { box-shadow: none; transform: translateY(-3px); }
+html.light .fade-up { transform: translateY(16px); }
+html.light .fade-up.visible { transform: translateY(0); }
+html.light .typing-animation { border-right-color: rgb(var(--c-cyan-400)); }
+@media (prefers-reduced-motion: reduce) {
+  html.light *, html.light *::before, html.light *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

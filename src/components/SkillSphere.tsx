@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { tone, useTheme } from '../theme';
 
 const skills = [
     { label: "Flutter", color: "#378ADD" },
@@ -25,6 +26,7 @@ const skills = [
 
 const SkillSphere: React.FC = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
+    const theme = useTheme();
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -88,7 +90,7 @@ const SkillSphere: React.FC = () => {
                 ctx.save();
                 ctx.globalAlpha = p.alpha;
                 ctx.font = `${p.scale > 0.6 ? 500 : 400} ${p.fs}px sans-serif`;
-                ctx.fillStyle = p.color;
+                ctx.fillStyle = tone(p.color, theme);
                 ctx.textAlign = "center";
                 ctx.textBaseline = "middle";
                 ctx.fillText(p.label, p.sx, p.sy);
@@ -173,7 +175,7 @@ const SkillSphere: React.FC = () => {
             window.removeEventListener("touchmove", handleTouchMove);
             window.removeEventListener("touchend", handleTouchEnd);
         };
-    }, []);
+    }, [theme]);
 
     return (
         <div style={{ padding: '1rem 0', textAlign: 'center', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>

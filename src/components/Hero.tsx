@@ -141,7 +141,7 @@ const Hero = () => {
 
           <div className="flex justify-center gap-4">
             <button
-              className="glow-button bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105"
+              className="glow-button text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105"
               onClick={() => {
                 const link = document.createElement("a");
                 link.href = "/Kiah_Resume.pdf";

@@ -140,12 +140,12 @@ const Research = () => {
                         <Icon className="w-6 h-6" />
                       </div>
                       <div>
-                        <h3 className={`font-bold text-lg transition-colors ${isActive ? 'text-white' : 'text-gray-400 group-hover:text-gray-200'}`}>
+                        <h3 className={`font-bold text-lg transition-colors ${isActive ? 'text-ink' : 'text-gray-400 group-hover:text-gray-200'}`}>
                           {item.title}
                         </h3>
                       </div>
                     </div>
-                    <ChevronRight className={`w-5 h-5 transition-all duration-300 ${isActive ? 'text-white translate-x-0 opacity-100' : 'text-gray-600 -translate-x-4 opacity-0'}`} />
+                    <ChevronRight className={`w-5 h-5 transition-all duration-300 ${isActive ? 'text-ink translate-x-0 opacity-100' : 'text-gray-600 -translate-x-4 opacity-0'}`} />
                   </div>
                 </button>
               );
@@ -170,7 +170,7 @@ const Research = () => {
                 </span>
               </div>
 
-              <h3 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+              <h3 className="text-3xl md:text-5xl font-bold text-ink mb-6 leading-tight">
                 {researchData[activeIndex].title}
               </h3>
 

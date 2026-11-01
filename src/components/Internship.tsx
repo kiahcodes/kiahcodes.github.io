@@ -52,7 +52,7 @@ const Internship = () => {
                   <Briefcase className="w-8 h-8 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-white">
+                  <h3 className="text-2xl font-bold text-ink">
                     Bonrix Software Systems
                   </h3>
                   <p className="text-cyan-400 font-semibold">AI/ML Intern</p>
@@ -66,14 +66,14 @@ const Internship = () => {
               <div className="grid sm:grid-cols-2 gap-4 mb-6">
                 <div className="bg-gray-700/50 rounded-lg p-4">
                   <Code className="w-6 h-6 text-cyan-400 mb-2" />
-                  <p className="text-white font-semibold">Technologies</p>
+                  <p className="text-ink font-semibold">Technologies</p>
                   <p className="text-gray-300 text-sm">
                     ReactJS, FastAPI, vLLM, Qwen2.5-7B-Instruct
                   </p>
                 </div>
                 <div className="bg-gray-700/50 rounded-lg p-4">
                   <Zap className="w-6 h-6 text-yellow-400 mb-2" />
-                  <p className="text-white font-semibold">Scale</p>
+                  <p className="text-ink font-semibold">Scale</p>
                   <p className="text-gray-300 text-sm">
                     128K context, 300 KB shared context
                   </p>
@@ -111,7 +111,7 @@ const Internship = () => {
                   href="https://github.com/kiahcodes/ContextGPT.git"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="glow-button inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-white px-5 py-2.5 rounded-full font-semibold transition-all duration-300"
+                  className="glow-button inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-ink px-5 py-2.5 rounded-full font-semibold transition-all duration-300"
                 >
                   <Github className="w-4 h-4" />
                   GitHub
@@ -125,7 +125,7 @@ const Internship = () => {
                   <Briefcase className="w-8 h-8 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-white">ScaleTech</h3>
+                  <h3 className="text-2xl font-bold text-ink">ScaleTech</h3>
                   <p className="text-cyan-400 font-semibold">
                     Software Development Intern
                   </p>
@@ -138,14 +138,14 @@ const Internship = () => {
               <div className="grid sm:grid-cols-2 gap-4 mb-6">
                 <div className="bg-gray-700/50 rounded-lg p-4">
                   <Code className="w-6 h-6 text-cyan-400 mb-2" />
-                  <p className="text-white font-semibold">Technologies</p>
+                  <p className="text-ink font-semibold">Technologies</p>
                   <p className="text-gray-300 text-sm">
                     React, FastAPI, PostgreSQL
                   </p>
                 </div>
                 <div className="bg-gray-700/50 rounded-lg p-4">
                   <Zap className="w-6 h-6 text-yellow-400 mb-2" />
-                  <p className="text-white font-semibold">Focus</p>
+                  <p className="text-ink font-semibold">Focus</p>
                   <p className="text-gray-300 text-sm">
                     Logistics route optimization
                   </p>
@@ -182,7 +182,7 @@ const Internship = () => {
                   href="https://github.com/kiahcodes/TruckRouting.git"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="glow-button inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-white px-5 py-2.5 rounded-full font-semibold transition-all duration-300"
+                  className="glow-button inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-ink px-5 py-2.5 rounded-full font-semibold transition-all duration-300"
                 >
                   <Github className="w-4 h-4" />
                   GitHub
@@ -208,12 +208,12 @@ const Internship = () => {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between px-5 py-3 border-b border-gray-700">
-              <span className="text-white font-semibold text-sm">
+              <span className="text-ink font-semibold text-sm">
                 Truck Route Planner
               </span>
               <button
                 onClick={closeModal}
-                className="text-gray-400 hover:text-white transition-colors p-1 rounded-lg hover:bg-gray-700"
+                className="text-gray-400 hover:text-ink transition-colors p-1 rounded-lg hover:bg-gray-700"
                 aria-label="Close"
               >
                 <X className="w-5 h-5" />

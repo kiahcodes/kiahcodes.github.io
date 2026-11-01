@@ -210,7 +210,7 @@ const Timeline = () => {
               <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-15`} />
 
               {/* Year, always fully visible */}
-              <span className="absolute top-3 right-5 text-5xl md:text-7xl font-black text-white/10 leading-none pointer-events-none">
+              <span className="absolute top-3 right-5 text-5xl md:text-7xl font-black text-ink/10 leading-none pointer-events-none">
                 {year}
               </span>
 
@@ -221,7 +221,7 @@ const Timeline = () => {
                   >
                     <Icon className="w-5 h-5" />
                   </div>
-                  <span className="text-xs uppercase tracking-widest text-gray-300 border border-white/15 rounded-full px-3 py-1">
+                  <span className="text-xs uppercase tracking-widest text-gray-300 border border-ink/20 rounded-full px-3 py-1">
                     {item.tag}
                   </span>
                 </div>
@@ -230,7 +230,7 @@ const Timeline = () => {
                   <span className="font-mono text-sm text-gray-400">
                     {item.date}
                   </span>
-                  <h3 className="text-xl md:text-2xl font-bold text-white mt-1 leading-tight">
+                  <h3 className="text-xl md:text-2xl font-bold text-ink mt-1 leading-tight">
                     {item.title}
                   </h3>
                   <p className="text-gray-300 text-sm md:text-base leading-relaxed mt-2">
@@ -248,7 +248,7 @@ const Timeline = () => {
         <button
           aria-label="Previous"
           onClick={prev}
-          className="w-9 h-9 rounded-full bg-gray-800 border border-gray-700 text-white flex items-center justify-center hover:bg-gray-700"
+          className="w-9 h-9 rounded-full bg-gray-800 border border-gray-700 text-ink flex items-center justify-center hover:bg-gray-700"
         >
           <ChevronLeft className="w-4 h-4" />
         </button>
@@ -269,7 +269,7 @@ const Timeline = () => {
         <button
           aria-label="Next"
           onClick={() => sendToBack(1)}
-          className="w-9 h-9 rounded-full bg-gray-800 border border-gray-700 text-white flex items-center justify-center hover:bg-gray-700"
+          className="w-9 h-9 rounded-full bg-gray-800 border border-gray-700 text-ink flex items-center justify-center hover:bg-gray-700"
         >
           <ChevronRight className="w-4 h-4" />
         </button>

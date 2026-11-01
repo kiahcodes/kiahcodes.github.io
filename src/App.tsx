@@ -10,10 +10,15 @@ import Research from "./components/Research";
 import Contact from "./components/Contact";
 import LiquidEther from "./components/LiquidEther";
 import SideStaggerNav from "./components/SideStaggerNav";
+import ThemeToggle from "./components/ThemeToggle";
+import { useTheme } from "./theme";
 
 import "./App.css";
 
-const ETHER_COLORS = ['#5227FF', '#FF9FFC', '#B497CF'];
+const ETHER_COLORS = {
+  dark: ['#5227FF', '#FF9FFC', '#B497CF'],
+  light: ['#9FB0F0', '#D9A6CB', '#F6F0E8'],
+};
 
 function ScrollToSection() {
   const location = useLocation();
@@ -32,15 +37,18 @@ function ScrollToSection() {
 }
 
 function App() {
+  const theme = useTheme();
   return (
     <Router>
       <ScrollToSection />
       <SideStaggerNav />
+      <ThemeToggle />
 
-      <div className="min-h-screen bg-gray-900 text-white overflow-x-hidden relative">
-        <div className="fixed inset-0 z-0 pointer-events-none">
+      <div className="min-h-screen bg-gray-900 text-ink overflow-x-hidden relative">
+        <div className={`fixed inset-0 z-0 pointer-events-none ${theme === "light" ? "opacity-30" : ""}`}>
           <LiquidEther
-            colors={ETHER_COLORS}
+            key={theme}
+            colors={ETHER_COLORS[theme]}
             mouseForce={20}
             cursorSize={100}
             isViscous={false}

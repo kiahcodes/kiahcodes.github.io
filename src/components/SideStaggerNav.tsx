@@ -62,7 +62,7 @@ const SideStaggerNav = () => {
         <div className="fixed right-0 top-0 h-screen flex flex-col justify-center items-end z-50 pointer-events-none">
             <button
                 type="button"
-                className="md:hidden pointer-events-auto fixed top-4 right-4 z-[60] p-2.5 rounded-lg bg-gray-900/90 backdrop-blur-sm border border-[#3afeda]/30 text-[#3afeda] shadow-lg"
+                className="md:hidden pointer-events-auto fixed top-4 right-4 z-[60] p-2.5 rounded-lg bg-gray-900/90 backdrop-blur-sm border border-[rgb(var(--c-nav)/0.3)] text-[rgb(var(--c-nav))] shadow-lg"
                 onClick={() => setIsMobileMenuOpen((open) => !open)}
                 aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
                 aria-expanded={isMobileMenuOpen}
@@ -119,7 +119,7 @@ const SideStaggerNav = () => {
                                 onClick={() => handleClick(section.id)}
                             >
                                 <span
-                                    className={`text-[10px] sm:text-xs font-bold tracking-widest text-[#3afeda] mr-4 transition-all duration-300 ease-out whitespace-nowrap translate-x-0 pointer-events-auto
+                                    className={`text-[10px] sm:text-xs font-bold tracking-widest text-[rgb(var(--c-nav))] mr-4 transition-all duration-300 ease-out whitespace-nowrap translate-x-0 pointer-events-auto
                     ${hoveredIndex !== null || isActive ? 'opacity-100' : 'opacity-50'}
                     ${isActive ? 'drop-shadow-[0_0_8px_rgba(58,254,218,0.8)]' : ''}
                   `}
@@ -127,7 +127,7 @@ const SideStaggerNav = () => {
                                     {section.label.toUpperCase()}
                                 </span>
                                 <div
-                                    className="bg-[#3afeda] rounded-full transition-all duration-300 ease-out origin-right"
+                                    className="bg-[rgb(var(--c-nav))] rounded-full transition-all duration-300 ease-out origin-right"
                                     style={{
                                         width: `${w}px`,
                                         height: isActive ? '3px' : '2px',
