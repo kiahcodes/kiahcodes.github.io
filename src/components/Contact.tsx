@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { Mail, Github, Linkedin, Send, MapPin, Phone } from 'lucide-react';
+import React, { useEffect, useRef } from "react";
+import { Mail, Github, Linkedin, Send, MapPin } from "lucide-react";
 const Contact = () => {
   const contactRef = useRef<HTMLElement>(null);
   useEffect(() => {
@@ -7,14 +7,14 @@ const Contact = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            entry.target.classList.add("visible");
           }
         });
       },
-      { threshold: 0.1, rootMargin: '50px' }
+      { threshold: 0.1, rootMargin: "50px" },
     );
     if (contactRef.current) {
-      const items = contactRef.current.querySelectorAll('.contact-item');
+      const items = contactRef.current.querySelectorAll(".contact-item");
       items.forEach((item) => observer.observe(item));
     }
     return () => observer.disconnect();
@@ -22,25 +22,31 @@ const Contact = () => {
   const socialLinks = [
     {
       icon: Github,
-      name: 'GitHub',
-      url: 'https://github.com/kiahcodes',
-      color: 'text-gray-400 hover:text-white',
-      bgColor: 'hover:bg-gray-800',
+      name: "GitHub",
+      url: "https://github.com/kiahcodes",
+      color: "text-gray-400 hover:text-white",
+      bgColor: "hover:bg-gray-800",
     },
     {
       icon: Linkedin,
-      name: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/kiah-mandaliya/',
-      color: 'text-blue-400 hover:text-blue-300',
-      bgColor: 'hover:bg-blue-500/20',
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/kiah-mandaliya/",
+      color: "text-blue-400 hover:text-blue-300",
+      bgColor: "hover:bg-blue-500/20",
     },
   ];
   return (
-    <section ref={contactRef} className="py-20 px-4 bg-gray-900 relative overflow-hidden">
+    <section
+      ref={contactRef}
+      className="py-20 px-4 bg-gray-900 relative overflow-hidden"
+    >
       {/* Background Animation */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-cyan-500 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-purple-500 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        <div
+          className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-purple-500 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "1s" }}
+        />
       </div>
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
@@ -48,17 +54,27 @@ const Contact = () => {
             Let's Connect
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Ready to collaborate on exciting projects or discuss opportunities? I'd love to hear from you!
+            Ready to collaborate on exciting projects or discuss opportunities?
+            I'd love to hear from you!
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Contact Form */}
           <div className="contact-item fade-up bg-gray-800/60 backdrop-blur-sm rounded-2xl p-8 border border-gray-700">
-            <h3 className="text-2xl font-bold text-white mb-6">Send a Message</h3>
+            <h3 className="text-2xl font-bold text-white mb-6">
+              Send a Message
+            </h3>
             {/* Note for User: Replace action URL with your Formspree/Web3Forms/Getform endpoint */}
-            <form action="https://api.web3forms.com/submit" method="POST" className="space-y-6">
-              {/* Note for User: Replace with your actual Web3Forms access key if using Web3Forms */}
-              <input type="hidden" name="access_key" value="ca4286d4-dc11-425f-9662-7d08345193af" />
+            <form
+              action="https://api.web3forms.com/submit"
+              method="POST"
+              className="space-y-6"
+            >
+              <input
+                type="hidden"
+                name="access_key"
+                value="ca4286d4-dc11-425f-9662-7d08345193af"
+              />
 
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-2">
@@ -110,9 +126,14 @@ const Contact = () => {
           </div>
 
           {/* Contact Information */}
-          <div className="contact-item fade-up space-y-8" style={{ animationDelay: '0.2s' }}>
+          <div
+            className="contact-item fade-up space-y-8"
+            style={{ animationDelay: "0.2s" }}
+          >
             <div className="bg-gray-800/60 backdrop-blur-sm rounded-2xl p-8 border border-gray-700">
-              <h3 className="text-2xl font-bold text-white mb-6">Get in Touch</h3>
+              <h3 className="text-2xl font-bold text-white mb-6">
+                Get in Touch
+              </h3>
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center">
@@ -120,16 +141,9 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-gray-300">Email</p>
-                    <p className="text-white font-semibold">kiahdmandaliya@gmail.com</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center">
-                    <Phone className="w-6 h-6 text-green-400" />
-                  </div>
-                  <div>
-                    <p className="text-gray-300">Phone</p>
-                    <p className="text-white font-semibold">+91 8140800042</p>
+                    <p className="text-white font-semibold">
+                      kiahdmandaliya@gmail.com
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -146,7 +160,9 @@ const Contact = () => {
 
             {/* Social Links */}
             <div className="bg-gray-800/60 backdrop-blur-sm rounded-2xl p-5 border border-gray-700">
-              <h3 className="text-lg font-bold text-white mb-4">Find me Online</h3>
+              <h3 className="text-lg font-bold text-white mb-4">
+                Find me Online
+              </h3>
               <div className="flex gap-4">
                 {socialLinks.map((link, index) => (
                   <a

@@ -7,6 +7,7 @@ import {
   Navigation,
   Calculator,
   ScanLine,
+  Briefcase,
 } from "lucide-react";
 
 const Projects = () => {
@@ -33,6 +34,24 @@ const Projects = () => {
   }, []);
 
   const projects = [
+    {
+      id: 0,
+      title: "Campus2Career",
+      description:
+        "Find internships, track every application and see which resume version actually gets interviews.",
+      image:
+        "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800",
+      icon: Briefcase,
+      techStack: ["React", "Node.js", "Express", "Supabase"],
+      features: [
+        "Drag-and-drop board to manage applications from Applied to Offer",
+        "Versioned resumes and cover letters linked to each application",
+        "Analytics on response rate and resume performance",
+      ],
+      color: "blue",
+      github: "",
+      live: "https://internship-application-tracker-sable.vercel.app",
+    },
     {
       id: 1,
       title: "Truck Routing Optimization Web App",
@@ -76,6 +95,7 @@ const Projects = () => {
         "Extracts ingredients from product labels using Google ML Kit OCR",
         "Identifies potentially harmful substances via Groq-powered LLM analysis",
         "Verifies marketing claims and recommends safer alternatives",
+        "Funded under SSIP 2.0 (Sep 2026)",
         "Supports voice-based chatbot interaction with TTS/STT",
       ],
       color: "pink",
@@ -140,6 +160,13 @@ const Projects = () => {
 
   const getColorClasses = (color: string) => {
     switch (color) {
+      case "blue":
+        return {
+          border: "border-blue-400",
+          text: "text-blue-400",
+          check: "bg-blue-400",
+          btn: "bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-400 hover:to-indigo-400",
+        };
       case "cyan":
         return {
           border: "border-cyan-400",
@@ -274,15 +301,17 @@ const Projects = () => {
                   </div>
 
                   <div className="flex flex-wrap gap-3">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="glow-button inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-white px-5 py-2.5 rounded-full font-semibold transition-all duration-300"
-                    >
-                      <Github className="w-4 h-4" />
-                      GitHub
-                    </a>
+                    {project.github !== "" && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="glow-button inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-white px-5 py-2.5 rounded-full font-semibold transition-all duration-300"
+                      >
+                        <Github className="w-4 h-4" />
+                        GitHub
+                      </a>
+                    )}
                     {project.live !== "#" && (
                       <a
                         href={project.live}

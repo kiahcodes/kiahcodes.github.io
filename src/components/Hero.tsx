@@ -185,12 +185,9 @@ const Hero = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">
             My Journey
           </h2>
-          <p className="text-xl text-gray-400">
-            The path of continuous learning and building.
-          </p>
         </div>
 
-        {/* Expandable Accordion Timeline */}
+        {/* Vertical Timeline */}
         <Timeline />
       </section>
     </>
